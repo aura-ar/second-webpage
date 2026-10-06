@@ -1,0 +1,51 @@
+button:hover{
+    background-color: darkgrey;
+}
+
+.full-page {
+  height: 100vh;       /* 100% of the viewport height */
+  width: 100vw;        /* 100% of the viewport width */
+  background-color: darkblue; /* Just an example */
+  display: flex;       /* Optional: flexbox for centering */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.image-row {
+  display: flex;
+  gap: 10px; /* space between images */
+  align-items: center; /* vertical alignment */
+}
+
+.normal {
+  display: flex;
+  flex-direction: column;
+  font-size:20px;
+  justify-content: flex-start;
+  gap: 10px; /* space between heading and image */
+}
+
+.food-item {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 15px;
+}
+
+.food-text h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.food-text p {
+    margin: 2px 0 0;
+    width: 250px;
+    font-size: 14px;
+}
