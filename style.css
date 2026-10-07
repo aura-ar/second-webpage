@@ -20,6 +20,7 @@ html, body {
 
 .image-row {
   display: flex;
+  flex-direction: row;
   gap: 10px; /* space between images */
   align-items: center; /* vertical alignment */
 }
