@@ -1,135 +1,429 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Sandwich Selection</title>
-
     <link rel="stylesheet" href="style.css">
+    <style>
+        [hidden] { display: none !important; }
+        .researcher-setup { text-align: center; padding: 2rem; }
+        .researcher-setup select,
+        .researcher-setup button { font: inherit; padding: 0.7rem; margin: 0.5rem; min-height: 44px; }
+    </style>
 </head>
-
 <body>
 
-    <main class="container">
+    <!-- This setup screen is shown only if no condition has been saved. -->
+    <div id="setup" class="container researcher-setup" hidden>
+        <h1>Experiment Setup</h1>
+        <label for="condition-selector">Select the participant's condition:</label>
+        <select id="condition-selector">
+            <option value="">Choose a condition</option>
+            <option value="1">Condition 1</option>
+            <option value="2">Condition 2</option>
+            <option value="3">Condition 3</option>
+            <option value="4">Condition 4</option>
+            <option value="5">Condition 5</option>
+        </select>
+        <button type="button" id="start-experiment">Start Experiment</button>
+        <p id="setup-error" role="alert" hidden></p>
+    </div>
 
-        <header class="page-header">
-            <h1>Our Sandwiches</h1>
-            <p>Select one of the options below to view more information.</p>
-            <p><strong>We cannot guarantee the absence of allergens in any of our products. Cross Contamination is Possible.</strong></p>
-        </header>
+    <!-- Only one complete version of the main page is visible at a time. -->
+    <main class="container" id="experiment" hidden>
+        <!-- ================= CONDITION 1 ================= -->
+        <div data-condition="1" hidden>
+            <header class="page-header">
+                <h1>Our Sandwiches</h1>
+                <p>Select one of the options below to view more information.</p>
+                <p><strong>We cannot guarantee the absence of allergens in any of our products. Cross Contamination is Possible.</strong></p>
+            </header>
 
-        <div class="image-row">
+            <!-- Change or add condition 1 content anywhere inside this block. -->
+            <div class="image-row">
+                <div class="food-item">
+                    <a href="PrawnMayo.html" class="food-image-link">
+                        <img src="Images/Prawnx3.png" width="200" height="200" alt="Prawn Mayo">
+                    </a>
+                    <div class="food-text">
+                        <h3>Prawn Mayo</h3>
+                        <p class="allergens"><strong>Main Allergens:</strong> Wheat, Barley, Oatmeal, Crustaceans, Mustard, Egg.</p>
+                    </div>
+                </div>
 
-            <div class="food-item">
+                <div class="food-item">
+                    <a href="EggCress.html" class="food-image-link">
+                        <img src="Images/EggCress.png" width="200" height="200" alt="Egg and Watercress">
+                    </a>
+                    <div class="food-text">
+                        <h3>Egg &amp; Watercress</h3>
+                        <p class="allergens"><strong>Main Allergens:</strong> Wheat, Barley, Oatmeal, Mustard, Egg.</p>
+                    </div>
+                </div>
 
-                <a href="PrawnMayo.html" class="food-image-link">
-                    <img src="Images/Prawnx3.png"
-                         width="200"
-                         height="200"
-                         alt="Prawn Mayo">
-                </a>
+                <div class="food-item">
+                    <a href="BLT.html" class="food-image-link">
+                        <img src="Images/BLT.png" width="200" height="200" alt="BLT">
+                    </a>
+                    <div class="food-text">
+                        <h3>BLT</h3>
+                        <p class="allergens"><strong>Main Allergens:</strong> Wheat, Barley, Mustard, Egg.</p>
+                    </div>
+                </div>
 
-                <div class="food-text">
-                    <h3>Prawn Mayo</h3>
+                <div class="food-item">
+                    <a href="CheesenOnion.html" class="food-image-link">
+                        <img src="Images/CheesenOnion.png" width="200" height="200" alt="Cheese and Red Onion">
+                    </a>
+                    <div class="food-text">
+                        <h3>Cheese &amp; Red Onion</h3>
+                        <p class="allergens"><strong>Main Allergens:</strong> Wheat, Barley, Oatmeal, Mustard, Egg, Milk.</p>
+                    </div>
+                </div>
 
-                    <p class="allergens">
-                        <strong>Main Allergens:</strong>
-                        Wheat, Barley, Oatmeal, Mustard, Egg.
-                    </p>
+                <div class="food-item">
+                    <a href="ChickenBacon.html" class="food-image-link">
+                        <img src="Images/ChickenBacon.png" width="200" height="200" alt="Chicken and Beechwood Smoked Bacon">
+                    </a>
+                    <div class="food-text">
+                        <h3>Chicken &amp; Beechwood Smoked Bacon</h3>
+                        <p class="allergens"><strong>Main Allergens:</strong> Wheat, Barley, Oatmeal, Mustard, Egg.</p>
+                    </div>
                 </div>
 
             </div>
+        </div>
 
+        <!-- ================= CONDITION 2 ================= -->
+        <div data-condition="2" hidden>
+            <header class="page-header">
+                <h1>Our Sandwiches</h1>
+                <p>Select one of the options below to view more information.</p>
+                <p><strong>We cannot guarantee the absence of allergens in any of our products. Cross Contamination is Possible.</strong></p>
+            </header>
 
-            <div class="food-item">
+            <!-- Change or add condition 2 content anywhere inside this block. -->
+            <div class="image-row">
+                <div class="food-item">
+                    <a href="PrawnMayo.html" class="food-image-link">
+                        <img src="Images/Prawnx3.png" width="200" height="200" alt="Prawn Mayo">
+                    </a>
+                    <div class="food-text">
+                        <h3>Prawn Mayo</h3>
+                        <p class="allergens"><strong>Main Allergens:</strong> Wheat, Barley, Oatmeal, Crustaceans, Mustard, Egg.</p>
+                    </div>
+                </div>
 
-                <a href="EggCress.html" class="food-image-link">
-                    <img src="Images/EggCress.png"
-                         width="200"
-                         height="200"
-                         alt="Egg and Watercress">
-                </a>
+                <div class="food-item">
+                    <a href="EggCress.html" class="food-image-link">
+                        <img src="Images/EggCress.png" width="200" height="200" alt="Egg and Watercress">
+                    </a>
+                    <div class="food-text">
+                        <h3>Egg &amp; Watercress</h3>
+                        <p class="allergens"><strong>Main Allergens:</strong> Wheat, Barley, Oatmeal, Mustard, Egg.</p>
+                    </div>
+                </div>
 
-                <div class="food-text">
-                    <h3>Egg &amp; Watercress</h3>
+                <div class="food-item">
+                    <a href="BLT.html" class="food-image-link">
+                        <img src="Images/BLT.png" width="200" height="200" alt="BLT">
+                    </a>
+                    <div class="food-text">
+                        <h3>BLT</h3>
+                        <p class="allergens"><strong>Main Allergens:</strong> Wheat, Barley, Mustard, Egg.</p>
+                    </div>
+                </div>
 
-                    <p class="allergens">
-                        <strong>Main Allergens:</strong>
-                        Wheat, Barley, Oatmeal, Mustard, Egg.
-                    </p>
+                <div class="food-item">
+                    <a href="CheesenOnion.html" class="food-image-link">
+                        <img src="Images/CheesenOnion.png" width="200" height="200" alt="Cheese and Red Onion">
+                    </a>
+                    <div class="food-text">
+                        <h3>Cheese &amp; Red Onion</h3>
+                        <p class="allergens"><strong>Main Allergens:</strong> Wheat, Barley, Oatmeal, Mustard, Egg, Milk.</p>
+                    </div>
+                </div>
+
+                <div class="food-item">
+                    <a href="ChickenBacon.html" class="food-image-link">
+                        <img src="Images/ChickenBacon.png" width="200" height="200" alt="Chicken and Beechwood Smoked Bacon">
+                    </a>
+                    <div class="food-text">
+                        <h3>Chicken &amp; Beechwood Smoked Bacon</h3>
+                        <p class="allergens"><strong>Main Allergens:</strong> Wheat, Barley, Oatmeal, Mustard, Egg.</p>
+                    </div>
                 </div>
 
             </div>
+        </div>
 
+        <!-- ================= CONDITION 3 ================= -->
+        <div data-condition="3" hidden>
+            <header class="page-header">
+                <h1>Our Sandwiches</h1>
+                <p>Select one of the options below to view more information.</p>
+                <p><strong>We cannot guarantee the absence of allergens in any of our products. Cross Contamination is Possible.</strong></p>
+            </header>
 
-            <div class="food-item">
+            <!-- Change or add condition 3 content anywhere inside this block. -->
+            <div class="image-row">
+                <div class="food-item">
+                    <a href="PrawnMayo.html" class="food-image-link">
+                        <img src="Images/Prawnx3.png" width="200" height="200" alt="Prawn Mayo">
+                    </a>
+                    <div class="food-text">
+                        <h3>Prawn Mayo</h3>
+                        <p class="allergens"><strong>Main Allergens:</strong> Wheat, Barley, Oatmeal, Crustaceans, Mustard, Egg.</p>
+                    </div>
+                </div>
 
-                <a href="BLT.html" class="food-image-link">
-                    <img src="Images/BLT.png"
-                         width="200"
-                         height="200"
-                         alt="BLT">
-                </a>
+                <div class="food-item">
+                    <a href="EggCress.html" class="food-image-link">
+                        <img src="Images/EggCress.png" width="200" height="200" alt="Egg and Watercress">
+                    </a>
+                    <div class="food-text">
+                        <h3>Egg &amp; Watercress</h3>
+                        <p class="allergens"><strong>Main Allergens:</strong> Wheat, Barley, Oatmeal, Mustard, Egg.</p>
+                    </div>
+                </div>
 
-                <div class="food-text">
-                    <h3>BLT</h3>
+                <div class="food-item">
+                    <a href="BLT.html" class="food-image-link">
+                        <img src="Images/BLT.png" width="200" height="200" alt="BLT">
+                    </a>
+                    <div class="food-text">
+                        <h3>BLT</h3>
+                        <p class="allergens"><strong>Main Allergens:</strong> Wheat, Barley, Mustard, Egg.</p>
+                    </div>
+                </div>
 
-                    <p class="allergens">
-                        <strong>Main Allergens:</strong>
-                        Wheat, Barley, Mustard, Egg.
-                    </p>
+                <div class="food-item">
+                    <a href="CheesenOnion.html" class="food-image-link">
+                        <img src="Images/CheesenOnion.png" width="200" height="200" alt="Cheese and Red Onion">
+                    </a>
+                    <div class="food-text">
+                        <h3>Cheese &amp; Red Onion</h3>
+                        <p class="allergens"><strong>Main Allergens:</strong> Wheat, Barley, Oatmeal, Mustard, Egg, Milk.</p>
+                    </div>
+                </div>
+
+                <div class="food-item">
+                    <a href="ChickenBacon.html" class="food-image-link">
+                        <img src="Images/ChickenBacon.png" width="200" height="200" alt="Chicken and Beechwood Smoked Bacon">
+                    </a>
+                    <div class="food-text">
+                        <h3>Chicken &amp; Beechwood Smoked Bacon</h3>
+                        <p class="allergens"><strong>Main Allergens:</strong> Wheat, Barley, Oatmeal, Mustard, Egg.</p>
+                    </div>
                 </div>
 
             </div>
+        </div>
 
+        <!-- ================= CONDITION 4 ================= -->
+        <div data-condition="4" hidden>
+            <header class="page-header">
+                <h1>Our Sandwiches</h1>
+                <p>Select one of the options below to view more information.</p>
+                <p><strong>We cannot guarantee the absence of allergens in any of our products. Cross Contamination is Possible.</strong></p>
+            </header>
 
-            <div class="food-item">
+            <!-- Change or add condition 4 content anywhere inside this block. -->
+            <div class="image-row">
+                <div class="food-item">
+                    <a href="PrawnMayo.html" class="food-image-link">
+                        <img src="Images/Prawnx3.png" width="200" height="200" alt="Prawn Mayo">
+                    </a>
+                    <div class="food-text">
+                        <h3>Prawn Mayo</h3>
+                        <p class="allergens"><strong>Main Allergens:</strong> Wheat, Barley, Oatmeal, Crustaceans, Mustard, Egg.</p>
+                    </div>
+                </div>
 
-                <a href="CheesenOnion.html" class="food-image-link">
-                    <img src="Images/CheesenOnion.png"
-                         width="200"
-                         height="200"
-                         alt="Cheese and Red Onion">
-                </a>
+                <div class="food-item">
+                    <a href="EggCress.html" class="food-image-link">
+                        <img src="Images/EggCress.png" width="200" height="200" alt="Egg and Watercress">
+                    </a>
+                    <div class="food-text">
+                        <h3>Egg &amp; Watercress</h3>
+                        <p class="allergens"><strong>Main Allergens:</strong> Wheat, Barley, Oatmeal, Mustard, Egg.</p>
+                    </div>
+                </div>
 
-                <div class="food-text">
-                    <h3>Cheese &amp; Red Onion</h3>
+                <div class="food-item">
+                    <a href="BLT.html" class="food-image-link">
+                        <img src="Images/BLT.png" width="200" height="200" alt="BLT">
+                    </a>
+                    <div class="food-text">
+                        <h3>BLT</h3>
+                        <p class="allergens"><strong>Main Allergens:</strong> Wheat, Barley, Mustard, Egg.</p>
+                    </div>
+                </div>
 
-                    <p class="allergens">
-                        <strong>Main Allergens:</strong>
-                        Wheat, Barley, Oatmeal, Mustard, Egg, Milk.
-                    </p>
+                <div class="food-item">
+                    <a href="CheesenOnion.html" class="food-image-link">
+                        <img src="Images/CheesenOnion.png" width="200" height="200" alt="Cheese and Red Onion">
+                    </a>
+                    <div class="food-text">
+                        <h3>Cheese &amp; Red Onion</h3>
+                        <p class="allergens"><strong>Main Allergens:</strong> Wheat, Barley, Oatmeal, Mustard, Egg, Milk.</p>
+                    </div>
+                </div>
+
+                <div class="food-item">
+                    <a href="ChickenBacon.html" class="food-image-link">
+                        <img src="Images/ChickenBacon.png" width="200" height="200" alt="Chicken and Beechwood Smoked Bacon">
+                    </a>
+                    <div class="food-text">
+                        <h3>Chicken &amp; Beechwood Smoked Bacon</h3>
+                        <p class="allergens"><strong>Main Allergens:</strong> Wheat, Barley, Oatmeal, Mustard, Egg.</p>
+                    </div>
                 </div>
 
             </div>
+        </div>
 
+        <!-- ================= CONDITION 5 ================= -->
+        <div data-condition="5" hidden>
+            <header class="page-header">
+                <h1>Our Sandwiches</h1>
+                <p>Select one of the options below to view more information.</p>
+                <p><strong>We cannot guarantee the absence of allergens in any of our products. Cross Contamination is Possible.</strong></p>
+            </header>
 
-            <div class="food-item">
+            <!-- Change or add condition 5 content anywhere inside this block. -->
+            <div class="image-row">
+                <div class="food-item">
+                    <a href="PrawnMayo.html" class="food-image-link">
+                        <img src="Images/Prawnx3.png" width="200" height="200" alt="Prawn Mayo">
+                    </a>
+                    <div class="food-text">
+                        <h3>Prawn Mayo</h3>
+                        <p class="allergens"><strong>Main Allergens:</strong> Wheat, Barley, Oatmeal, Crustaceans, Mustard, Egg.</p>
+                    </div>
+                </div>
 
-                <a href="ChickenBacon.html" class="food-image-link">
-                    <img src="Images/ChickenBacon.png"
-                         width="200"
-                         height="200"
-                         alt="Chicken and Beechwood Smoked Bacon">
-                </a>
+                <div class="food-item">
+                    <a href="EggCress.html" class="food-image-link">
+                        <img src="Images/EggCress.png" width="200" height="200" alt="Egg and Watercress">
+                    </a>
+                    <div class="food-text">
+                        <h3>Egg &amp; Watercress</h3>
+                        <p class="allergens"><strong>Main Allergens:</strong> Wheat, Barley, Oatmeal, Mustard, Egg.</p>
+                    </div>
+                </div>
 
-                <div class="food-text">
-                    <h3>Chicken &amp; Beechwood Smoked Bacon</h3>
+                <div class="food-item">
+                    <a href="BLT.html" class="food-image-link">
+                        <img src="Images/BLT.png" width="200" height="200" alt="BLT">
+                    </a>
+                    <div class="food-text">
+                        <h3>BLT</h3>
+                        <p class="allergens"><strong>Main Allergens:</strong> Wheat, Barley, Mustard, Egg.</p>
+                    </div>
+                </div>
 
-                    <p class="allergens">
-                        <strong>Main Allergens:</strong>
-                        Wheat, Barley, Oatmeal, Mustard, Egg.
-                    </p>
+                <div class="food-item">
+                    <a href="CheesenOnion.html" class="food-image-link">
+                        <img src="Images/CheesenOnion.png" width="200" height="200" alt="Cheese and Red Onion">
+                    </a>
+                    <div class="food-text">
+                        <h3>Cheese &amp; Red Onion</h3>
+                        <p class="allergens"><strong>Main Allergens:</strong> Wheat, Barley, Oatmeal, Mustard, Egg, Milk.</p>
+                    </div>
+                </div>
+
+                <div class="food-item">
+                    <a href="ChickenBacon.html" class="food-image-link">
+                        <img src="Images/ChickenBacon.png" width="200" height="200" alt="Chicken and Beechwood Smoked Bacon">
+                    </a>
+                    <div class="food-text">
+                        <h3>Chicken &amp; Beechwood Smoked Bacon</h3>
+                        <p class="allergens"><strong>Main Allergens:</strong> Wheat, Barley, Oatmeal, Mustard, Egg.</p>
+                    </div>
                 </div>
 
             </div>
-
         </div>
 
     </main>
 
-</body>
+    <script>
+        const storageKey = "sandwichExperimentCondition";
+        const validConditions = ["1", "2", "3", "4", "5"];
+        const setup = document.getElementById("setup");
+        const experiment = document.getElementById("experiment");
+        const conditionBlocks = document.querySelectorAll("#experiment > [data-condition]");
 
+        function showExperiment(condition) {
+            if (!validConditions.includes(condition)) return;
+
+            conditionBlocks.forEach(block => {
+                block.hidden = block.dataset.condition !== condition;
+            });
+
+            setup.hidden = true;
+            experiment.hidden = false;
+        }
+
+        document.getElementById("start-experiment").addEventListener("click", () => {
+            const condition = document.getElementById("condition-selector").value;
+            const errorMessage = document.getElementById("setup-error");
+            errorMessage.hidden = true;
+
+            if (!validConditions.includes(condition)) {
+                errorMessage.textContent = "Please choose a condition first.";
+                errorMessage.hidden = false;
+                return;
+            }
+
+            try {
+                // Remember the condition when moving to an information page and back.
+                localStorage.setItem(storageKey, condition);
+            } catch (error) {
+                errorMessage.textContent = "This browser cannot save the condition. Check its storage settings.";
+                errorMessage.hidden = false;
+                return;
+            }
+
+            showExperiment(condition);
+        });
+
+        // Return visits to index.html automatically restore the selected condition.
+        let savedCondition = null;
+        try {
+            savedCondition = localStorage.getItem(storageKey);
+        } catch (error) {
+            // If storage is blocked, setup stays available.
+        }
+
+        if (validConditions.includes(savedCondition)) {
+            showExperiment(savedCondition);
+        } else {
+            setup.hidden = false;
+        }
+
+        // Researcher reset: tap the visible "Our Sandwiches" heading five times quickly.
+        let tapCount = 0;
+        let lastTapTime = 0;
+
+        document.querySelectorAll("#experiment .page-header h1").forEach(heading => {
+            heading.addEventListener("click", () => {
+                const now = Date.now();
+                tapCount = now - lastTapTime < 1000 ? tapCount + 1 : 1;
+                lastTapTime = now;
+
+                if (tapCount >= 5) {
+                    try {
+                        localStorage.removeItem(storageKey);
+                    } catch (error) {
+                        // Ignore storage errors; reloading will show setup if nothing was saved.
+                    }
+                    window.location.reload();
+                }
+            });
+        });
+    </script>
+</body>
 </html>

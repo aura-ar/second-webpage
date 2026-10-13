@@ -375,3 +375,7 @@ button:hover {
 .back-button:active {
     transform: translateY(0);
 }
+
+[hidden] {
+    display: none !important;
+}
