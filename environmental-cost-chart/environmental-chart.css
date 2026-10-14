@@ -1,0 +1,89 @@
+/* Continuous reference-line dot matrix. This stylesheet scopes itself to the chart. */
+.environmental-chart { 
+  --eco-text: #222;
+  --eco-muted: #728087;
+  --eco-border: #e2e6e9;
+  --eco-water: #428bc6;
+  --eco-carbon: #9175b9;
+  --eco-eutro: #cb953a;
+  --eco-land: #3d9d80;
+  background: white;
+  border: 1px solid var(--eco-border);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, .045);
+  border-radius: 11px;
+  margin-top: 24px;
+  padding: 19px 20px 15px;
+  color: var(--eco-text);
+}
+.environmental-chart, .environmental-chart * { box-sizing: border-box; }
+.environmental-chart__heading { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 10px 18px; margin-bottom: 16px; }
+.environmental-chart__heading h2 { font-size: 20px; line-height: 1.3; margin: 0 0 5px; }
+.environmental-chart__heading p { margin: 0; color: var(--eco-muted); font-size: 12px; line-height: 1.5; }
+.environmental-chart__legend { display: flex; align-items: center; gap: 7px; font-size: 11px; color: #64747b; padding-top: 4px; }
+.environmental-chart__legend-line { border-left: 2px dashed #6e8991; height: 17px; flex-shrink: 0; }
+.environmental-chart__scroller { overflow-x: auto; max-width: 100%; }
+.environmental-chart__matrix { min-width: 760px; display: grid; grid-template-columns: 172px repeat(4, minmax(0, 1fr)); gap: 12px; }
+.environmental-chart__names, 
+.environmental-chart__measure { min-width: 0; }
+/* Subtle vertical separators between environmental measures */
+.environmental-chart__measure {
+    position: relative;
+}
+
+.environmental-chart__measure:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    right: -6px;
+
+    width: 1px;
+    background-color: #e9edef;
+
+    pointer-events: none;
+}
+.environmental-chart__colheader { min-height: 56px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 3px 0 8px; gap: 3px; }
+.environmental-chart__colheader strong { font-size: 12px; font-weight: 750; line-height: 1.25; }
+.environmental-chart__colheader small { font-size: 10px; color: var(--eco-muted); line-height: 1.3; }
+.environmental-chart__colheader--empty { color: var(--eco-muted); font-size: 11px; }
+.environmental-chart__rows { position: relative; }
+.environmental-chart__rowname, .environmental-chart__measure-row { height: 43px; display: flex; align-items: center; border-top: 1px solid #f1f3f4; }
+.environmental-chart__rowname { font-size: 11px; font-weight: 650; line-height: 1.3; color: #4f5c63; padding-right: 8px; }
+.environmental-chart__measure-row { gap: 9px; }
+.environmental-chart__track { flex: 1 1 auto; position: relative; height: 2px; background: #cbd3d7; min-width: 0; }
+.environmental-chart__dot {
+    position: absolute;
+    top: 50%;
+
+    width: 11px;
+    height: 11px;
+
+    border: 2px solid white;
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background: var(--sandwich-color);
+    box-shadow: 0 0 0 1px var(--sandwich-color);
+
+    z-index: 2;
+}
+.environmental-chart__number { width: 37px; flex: 0 0 37px; font-size: 11px; text-align: right; color: #3f4a50; font-variant-numeric: tabular-nums; font-weight: 700; }
+/* Position the guide over the full five-row area, exactly aligned with the tracks. */
+.environmental-chart__guide-area { position: absolute; top: 0; bottom: 0; left: 0; right: 46px; pointer-events: none; z-index: 3; }
+.environmental-chart__guide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    border-left: 2px dashed #84959b;
+
+    left: var(--reference-percentage);
+    transform: translateX(-50%);
+
+    opacity: 0.95;
+}
+.environmental-chart__scale { display: flex; justify-content: space-between; padding-right: 46px; font-size: 10px; color: var(--eco-muted); margin-top: 6px; font-variant-numeric: tabular-nums; }
+.environmental-chart__footnote { border-top: 1px solid #eceff1; margin: 12px 0 0; padding-top: 10px; color: #7a858c; font-size: 11px; line-height: 1.5; }
+.environmental-chart__error { color: #a23636; font-size: 13px; }
+@media(max-width:700px) { .environmental-chart { padding: 14px; } .environmental-chart__matrix { min-width: 740px; } }

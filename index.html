@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sandwich Selection</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+      href="environmental-cost-chart/environmental-chart.css">
+    
     <style>
         [hidden] { display: none !important; }
         .researcher-setup { text-align: center; padding: 2rem; }
@@ -32,7 +35,7 @@
 
     <!-- Only one complete version of the main page is visible at a time. -->
     <main class="container" id="experiment" hidden>
-        <!-- ================= CONDITION 1 ================= -->
+        <!-- ================= Prawn Mayo ================= -->
         <div data-condition="1" hidden>
             <header class="page-header">
                 <h1>Our Sandwiches</h1>
@@ -40,7 +43,7 @@
                 <p><strong>We cannot guarantee the absence of allergens in any of our products. Cross Contamination is Possible.</strong></p>
             </header>
 
-            <!-- Change or add condition 1 content anywhere inside this block. -->
+            
             <div class="image-row">
                 <div class="food-item">
                     <a href="PrawnMayo.html" class="food-image-link">
@@ -91,7 +94,9 @@
                         <p class="allergens"><strong>Main Allergens:</strong> Wheat, Barley, Oatmeal, Mustard, Egg.</p>
                     </div>
                 </div>
-
+                <div class="environmental-chart"
+                    data-reference="prawn">
+                </div>
             </div>
         </div>
 
@@ -425,5 +430,7 @@
             });
         });
     </script>
+    <script src="environmental-cost-chart/environmental-data.js" defer></script>
+    <script src="environmental-cost-chart/environmental-chart.js" defer></script>
 </body>
 </html>
