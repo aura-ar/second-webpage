@@ -23,10 +23,10 @@
   //   { key: "land", title: "Land usage", unit: "m²", color: "#3d9d80" }
   // ];
     const METRICS = [
-    { key: "water", title: "Water usage", unit: "L"},
-    { key: "carbon", title: "Carbon emissions", unit: "kg CO₂e"},
-    { key: "eutrophication", title: "Eutrophication", unit: "g PO₄-eq"},
-    { key: "land", title: "Land usage", unit: "m²"}
+    { key: "water", title: "Mean Water usage", unit: "L per 100g"},
+    { key: "carbon", title: "Mean Greenhouse Gas Emissions", unit: "kg CO₂e per 100g"},
+    { key: "eutrophication", title: "Mean Eutrophication", unit: "g PO₄-eq per 100g"},
+    { key: "land", title: "Mean Land usage", unit: "m² per 100g"}
   ];
 
   function el(tag, className, text) {

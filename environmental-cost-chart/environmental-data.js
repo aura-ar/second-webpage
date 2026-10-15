@@ -12,37 +12,37 @@
 window.sandwichEnvironmentalData = {
   prawn: {
     name: "Prawn Mayo",
-    water: 520,
-    carbon: 3.8,
-    eutrophication: 16,
-    land: 1.9
+    water: 128,
+    carbon: 0.83,
+    eutrophication: 6.04,
+    land: 0.18
   },
   egg: {
     name: "Egg & Watercress",
-    water: 260,
-    carbon: 1.2,
-    eutrophication: 4,
-    land: 1.4
+    water: 64,
+    carbon: 0.32,
+    eutrophication: 1.57,
+    land: 0.54
   },
   blt: {
     name: "BLT",
-    water: 700,
-    carbon: 5.1,
-    eutrophication: 13,
-    land: 3.7
+    water: 45,
+    carbon: 0.27,
+    eutrophication: 1.47,
+    land: 0.38
   },
   cheese: {
     name: "Cheese & Red Onion",
-    water: 460,
-    carbon: 2.5,
-    eutrophication: 9,
-    land: 2.8
+    water: 50,
+    carbon: 0.48,
+    eutrophication: 1.77,
+    land: 0.63
   },
   chicken: {
     name: "Chicken & Beechwood Smoked Bacon",
-    water: 610,
-    carbon: 4.4,
-    eutrophication: 11,
-    land: 3.3
+    water: 37,
+    carbon: 0.39,
+    eutrophication: 1.82,
+    land: 0.48
   }
 };
